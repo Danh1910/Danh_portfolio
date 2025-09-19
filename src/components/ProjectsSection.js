@@ -6,7 +6,7 @@ const projects = [
   title: "Personal Portfolio Website",
   description: "Developed a personal website to showcase profile, skills, and projects, built with modern frontend technologies for responsive design.",
   technologies: ["NodeJS","React", "Tailwind", "JavaScript"],
-  github: "https://github.com/danhtran/portfolio"
+  github: "https://github.com/Danh1910/Danh_portfolio"
 },
 {
   title: "ERP Module on Odoo",
