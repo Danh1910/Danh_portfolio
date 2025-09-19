@@ -1,0 +1,52 @@
+/* Reset */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body, #root { height: 100%; font-family: Arial, sans-serif; scroll-behavior: smooth; background-color: #121212;}
+
+/* App layout */
+.app { min-height: 100vh; display: flex; flex-direction: column; background: #000; color: #fff; }
+
+/* Header */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 24px;
+  border-bottom: 1px solid #333;
+  background: #111;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.brand { font-weight: 700; font-size: 1.2rem; color: #fff; }
+.nav a {
+  margin-left: 18px;
+  text-decoration: none;
+  color: #ddd;
+  font-weight: 500;
+}
+.nav a:hover { color: #1e90ff; }
+
+/* Main */
+.site-main { flex: 1; padding: 32px 20px; max-width: 900px; margin: 0 auto; width: 100%; }
+.intro h1, .intro h2 { margin-bottom: 12px; }
+.intro p { margin-bottom: 16px; line-height: 1.6; color: #ccc; }
+.skills h2, .projects h2 { margin-top: 28px; margin-bottom: 12px; }
+.skills ul { margin-top: 8px; padding-left: 1.2rem; color: #ccc; }
+
+/* Footer */
+.site-footer {
+  padding: 14px 20px;
+  border-top: 1px solid #333;
+  text-align: center;
+  background: #111;
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .nav a { margin-left: 12px; font-size: 0.95rem; }
+  .site-header { padding: 12px; }
+  .site-main { padding: 20px 12px; }
+  .intro h1 { font-size: 1.6rem; }
+}

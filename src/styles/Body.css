@@ -1,0 +1,47 @@
+/* Body.css */
+
+/* Áp dụng cho toàn bộ main */
+.site-main {
+  background-color: #121212; /* nền đen hơi nhạt để đỡ chói mắt */
+  color: #ffffff; /* chữ trắng */
+  min-height: 100vh;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+}
+
+/* Các section */
+section {
+  margin-bottom: 40px;
+}
+
+/* Tiêu đề h1, h2 */
+h1, h2 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+
+/* Thẻ strong nổi bật */
+strong {
+  color: #00ffff; /* màu xanh nhạt để nổi bật trên nền tối */
+}
+
+/* Danh sách kỹ năng */
+.skills ul {
+  list-style-type: square; /* bullet kiểu vuông */
+  padding-left: 20px;
+}
+
+/* Paragraph */
+p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* Các section khác có thể thêm border hoặc background nhẹ nếu muốn */
+.projects {
+  /* ví dụ border top */
+  border-top: 1px solid #444;
+  padding-top: 20px;
+}
+
+
