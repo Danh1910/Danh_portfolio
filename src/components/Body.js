@@ -3,6 +3,7 @@ import ProjectsSection from "./ProjectsSection";
 import SkillsSection from "./SkillsSection";
 import ExperienceSection from "./ExperienceSection";
 import MyInformationSection from "./MyInformationSection";
+import ContactForm from "./Contact";
 
 
 
@@ -45,7 +46,7 @@ function Body() {
       <ProjectsSection />
       <ExperienceSection />
 
-
+      <ContactForm />
     </main>
   );
 }

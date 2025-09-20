@@ -7,9 +7,11 @@ function Header() {
         <div className="text-2xl font-bold text-cyan-400">Danh Tran</div>
         <nav className="space-x-6">
           <a href="#about" className="hover:text-cyan-400 transition-colors">About</a>
+          <a href="#information" className="hover:text-cyan-400 transition-colors">Information</a>
           <a href="#skills" className="hover:text-cyan-400 transition-colors">Skill</a>
           <a href="#projects" className="hover:text-cyan-400 transition-colors">Project</a>
           <a href="#experience" className="hover:text-cyan-400 transition-colors">Experience</a>
+          <a href="#contact" className="hover:text-cyan-400 transition-colors">Contact</a>
         </nav>
       </div>
     </header>
