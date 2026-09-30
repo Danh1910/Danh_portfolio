@@ -57,7 +57,7 @@ function FeaturedProject({ title, description, technologies, badge, highlights, 
 
         <div className="relative">
           <div className="flex flex-wrap items-center gap-3">
-            <span className="font-mono text-xs text-accent-300">{"// featured project"}</span>
+            <span className="font-mono text-xs text-accent-300">01 · Featured · Billing platform</span>
             {badge ? (
               <span className="inline-flex items-center gap-2 rounded-full border border-emerald-400/40 bg-emerald-400/10 px-2.5 py-0.5 text-xs font-semibold text-emerald-300">
                 <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />

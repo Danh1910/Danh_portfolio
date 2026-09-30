@@ -52,20 +52,3 @@
     display: none;
   }
 }
-
-/* Con trỏ nhấp nháy cho hiệu ứng gõ chữ */
-.caret {
-  display: inline-block;
-  width: 0.55em;
-  height: 1.1em;
-  margin-left: 2px;
-  vertical-align: -0.15em;
-  background: currentColor;
-  animation: caret-blink 1s step-end infinite;
-}
-
-@keyframes caret-blink {
-  50% {
-    opacity: 0;
-  }
-}

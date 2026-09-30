@@ -1,8 +1,8 @@
 import React from "react";
-import ProjectCard from "./ProjectCard";
+import CaseStudy from "./CaseStudy";
 import FeaturedProject from "./FeaturedProject";
 import Section from "./ui/Section";
-import { Reveal, Stagger, StaggerItem } from "./ui/motion";
+import { Reveal } from "./ui/motion";
 
 const featuredProject = {
   title: "B2B Website & Billing Platform",
@@ -25,46 +25,52 @@ const featuredProject = {
   ],
 };
 
-const projects = [
+const caseStudies = [
 {
-  title: "POD Back Office",
-  description: "Per-marketplace order screens, imports, supplier exports and a tracking audit. Rule-based designer assignment with design rules per SKU and KPI dashboards; decodes storefront personalization data so production gets the exact text & images; earnings from fulfillment webhooks plus order and advertising dashboards.",
-  technologies: ["PHP", "MySQL", "jQuery", "Nginx", "Docker"],
+  index: "02",
+  eyebrow: "Automation",
+  title: "Seller-Dashboard Automation",
+  metric: { value: "1–2h → 1 click", label: "sellers' daily customization work" },
+  problem: "Sellers spent 1–2 hours every day on repetitive customization work inside marketplace seller dashboards.",
+  built: [
+    "A Chrome Manifest V3 extension that works inside seller dashboards: syncs orders, fills tracking, pulls reports and runs queued jobs.",
+    "Jobs run only while the browser is idle, so the extension never gets in the seller's way.",
+    "Internal APIs on the back office that the extension calls to keep orders, tracking and reports in sync.",
+  ],
+  result: "The 1–2 hours of daily customization work now takes a single click.",
+  also: {
+    title: "Design rendering pipeline",
+    text: "Flask + Redis/RQ workers driving Photoshop & Illustrator — text swaps, face-aware crops, background removal and AI upscaling, delivered to Google Drive. Plus Python bulk data-entry tools that turn an afternoon of product setup into a single run.",
+  },
+  stack: ["JavaScript", "Chrome MV3", "Internal APIs", "Python", "Flask", "Redis / RQ", "Photoshop scripting"],
 },
 {
-  title: "APIs, Webhooks & CRON Scheduler",
-  description: "Storefront and supplier integrations, fulfillment webhooks for status, tracking & fees. A database-driven CRON scheduler where each job runs in its own process for SLA, ship-by and tracking alerts. Buyer messages and email threads pulled into one internal inbox, plus internal APIs that extensions and tools call.",
-  technologies: ["REST API", "Webhooks", "CRON", "Shopify GraphQL"],
-},
-{
-  title: "Seller-Dashboard Chrome Extension",
-  description: "Manifest V3 extension that syncs orders, fills tracking, pulls reports and runs queued jobs inside seller dashboards — only while the browser is idle.",
-  technologies: ["JavaScript", "Chrome MV3", "Internal APIs"],
-},
-{
-  title: "Design Rendering Pipeline",
-  description: "Flask + Redis/RQ workers driving Photoshop & Illustrator: text swaps, face-aware crops, background removal and AI upscaling, with results delivered to Google Drive. Alongside it, Python bulk data-entry tools that turn an afternoon of product setup into a single run.",
-  technologies: ["Python", "Flask", "Redis / RQ", "Photoshop scripting"],
+  index: "03",
+  eyebrow: "Back office · Integrations",
+  title: "POD Back Office & Integrations",
+  metric: { value: "100s", label: "pages & tables maintained and extended" },
+  problem: "A POD business selling on several marketplaces needs orders, customers, designs, product customization and fulfillment in one place — with the right tools for each team.",
+  built: [
+    "Per-marketplace order screens, imports, supplier exports and a tracking audit.",
+    "Rule-based designer assignment with design rules per SKU and KPI dashboards for the design team.",
+    "Decoding of storefront personalization data so production gets the exact text & images.",
+    "Marketplace & supplier integrations — storefront APIs, Shopify GraphQL, fulfillment webhooks for status, tracking & fees.",
+    "A database-driven CRON scheduler, each job in its own process, for SLA, ship-by and tracking alerts; buyer messages and email threads pulled into one internal inbox.",
+  ],
+  result: "Orders, tracking and designs stay in sync across marketplaces and suppliers, and SLA, ship-by and tracking issues surface as alerts.",
+  stack: ["PHP", "MySQL", "jQuery", "REST API", "Webhooks", "CRON", "Shopify GraphQL", "Nginx", "Docker"],
 },
 ];
 
 function ProjectsSection() {
   return (
-    <Section id="projects" index="03" title="Project">
-      <FeaturedProject {...featuredProject} />
-
-      <Stagger className="mt-6 grid grid-cols-1 gap-5 md:grid-cols-2">
-        {projects.map((proj) => (
-          <StaggerItem key={proj.title} className="h-full">
-            <ProjectCard
-              title={proj.title}
-              description={proj.description}
-              technologies={proj.technologies}
-              github={proj.github}
-            />
-          </StaggerItem>
+    <Section id="work" index="01" title="Selected Work">
+      <div className="space-y-6">
+        <FeaturedProject {...featuredProject} />
+        {caseStudies.map((study) => (
+          <CaseStudy key={study.title} {...study} />
         ))}
-      </Stagger>
+      </div>
 
       <Reveal>
         <p className="mt-8 text-sm text-gray-500">

@@ -11,7 +11,7 @@ const experiences = [
         "Maintain and extend a large PHP/MySQL back office covering orders, customers, designs, product customization and fulfillment across several marketplaces.",
         "Build marketplace & supplier integrations (REST APIs, Shopify GraphQL, fulfillment webhooks) and a database-driven CRON scheduler for SLA, ship-by and tracking alerts.",
         "Own the full slice: database design & stored procedures → business logic → admin dashboards and BI reporting (orders, earnings, advertising, designer KPIs).",
-        "Automate repetitive work with a Chrome MV3 seller-dashboard extension, a Flask + Redis/RQ design rendering pipeline driving Photoshop & Illustrator, and Python bulk data-entry tools.",
+        "Automate repetitive work with a Chrome MV3 seller-dashboard extension that cut sellers' 1–2 hours of daily customization work down to one click, a Flask + Redis/RQ design rendering pipeline driving Photoshop & Illustrator, and Python bulk data-entry tools.",
         "Built a B2B website & monthly billing platform solo (Laravel, Filament) — from empty repo to live customers in about a week, with 190 tests and PHPStan level 5."
     ]
     },
@@ -47,7 +47,7 @@ function ExperienceSection() {
   const lineScale = useSpring(scrollYProgress, { stiffness: 100, damping: 30, restDelta: 0.001 });
 
   return (
-    <Section id="experience" index="04" title="Experience">
+    <Section id="experience" index="02" title="Experience">
       <div ref={listRef} className="relative pl-12">
         {/* Timeline line */}
         <div className="absolute bottom-0 left-4 top-0 w-0.5 bg-white/10" aria-hidden="true" />

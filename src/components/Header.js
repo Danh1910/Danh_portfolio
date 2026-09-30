@@ -3,10 +3,9 @@ import { motion } from "motion/react";
 
 const LINKS = [
   { id: "about", label: "About" },
-  { id: "information", label: "Information" },
-  { id: "skills", label: "Skill" },
-  { id: "projects", label: "Project" },
+  { id: "work", label: "Work" },
   { id: "experience", label: "Experience" },
+  { id: "stack", label: "Stack" },
   { id: "contact", label: "Contact" },
 ];
 

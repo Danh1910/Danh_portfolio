@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import Section from "./ui/Section";
 import { Reveal, Stagger, StaggerItem } from "./ui/motion";
-
-const EMAIL = "danh123098@gmail.com";
+import { EMAIL, GITHUB, LINKEDIN } from "./links";
 
 const CHANNELS = [
   {
@@ -15,13 +14,13 @@ const CHANNELS = [
     icon: "/icons/linkedin.svg",
     label: "LinkedIn",
     value: "Say hi on LinkedIn",
-    link: "https://www.linkedin.com/in/danh-tr%E1%BA%A7n-a12784333/",
+    link: LINKEDIN,
   },
   {
     icon: "/icons/github.png",
     label: "GitHub",
     value: "github.com/Danh1910",
-    link: "https://github.com/Danh1910",
+    link: GITHUB,
   },
 ];
 
@@ -39,7 +38,7 @@ function ContactForm() {
   }
 
   return (
-    <Section id="contact" index="05" title="Contact Me">
+    <Section id="contact" index="04" title="Contact">
       <Reveal>
         <div className="relative overflow-hidden rounded-2xl border border-accent-500/30 bg-gradient-to-br from-accent-500/15 via-surface to-surface p-8 sm:p-12">
           <div

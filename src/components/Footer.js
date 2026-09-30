@@ -1,13 +1,22 @@
 import React from "react";
+import { EMAIL, GITHUB, LINKEDIN } from "./links";
 
 function Footer() {
   return (
     <footer className="border-t border-white/10 py-8">
       <div className="max-w-6xl mx-auto flex flex-col items-center justify-between gap-3 px-4 text-sm text-gray-500 sm:flex-row sm:px-6">
-        <p>© {new Date().getFullYear()} Danh Trần. All rights reserved.</p>
-        <p className="font-mono">
-          <span className="text-accent-400">&gt;</span> I build tools that kill manual work
-        </p>
+        <p>© {new Date().getFullYear()} Danh Trần</p>
+        <nav className="flex gap-5">
+          <a href={GITHUB} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-accent-300">
+            GitHub
+          </a>
+          <a href={LINKEDIN} target="_blank" rel="noopener noreferrer" className="transition-colors hover:text-accent-300">
+            LinkedIn
+          </a>
+          <a href={`mailto:${EMAIL}`} className="transition-colors hover:text-accent-300">
+            Email
+          </a>
+        </nav>
       </div>
     </footer>
   );
