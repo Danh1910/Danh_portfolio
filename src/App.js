@@ -3,6 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Body from "./components/Body";
 import ScrollProgress from "./components/ScrollProgress";
+import BackToTop from "./components/BackToTop";
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Header />
         <Body />
         <Footer />
+        <BackToTop />
       </div>
     </MotionConfig>
   );
