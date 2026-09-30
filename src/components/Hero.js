@@ -3,10 +3,10 @@ import { CV_URL, EMAIL, GITHUB, LINKEDIN } from "./links";
 
 // Số liệu tác động, không phải số liệu "cho đẹp"
 const IMPACT = [
+  { value: "~9h/day → 0", label: "manual order-to-designer assignment, fully automated" },
   { value: "1–2h → 1 click", label: "sellers' daily customization work, automated" },
   { value: "~1 week", label: "empty repo → production, built solo" },
   { value: "190 tests", label: "plus PHPStan level 5 on a billing platform" },
-  { value: "1+ yr", label: "shipping back offices & integrations for POD" },
 ];
 
 const PROFILE = [
@@ -77,7 +77,7 @@ function Hero() {
           </p>
 
           <p className="mt-6 max-w-xl text-lg leading-relaxed text-gray-300">
-            I build back offices, marketplace integrations and automation for POD e-commerce — in{" "}
+            1+ year building back offices, marketplace integrations and automation for POD e-commerce — in{" "}
             <strong className="font-semibold text-white">PHP / Laravel, MySQL, Python and JavaScript</strong>. I look
             for the manual, repeated task and turn it into a tool nobody has to think about again.
           </p>

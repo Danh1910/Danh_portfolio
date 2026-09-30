@@ -9,6 +9,7 @@ const experiences = [
     time: "Aug 2025 - Present",
     description: [
         "Maintain and extend a large PHP/MySQL back office covering orders, customers, designs, product customization and fulfillment across several marketplaces.",
+        "Built an auto-assignment pipeline that routes every new order to the right designer and reviewer every 30 minutes — replacing a manual task that took someone all day, 9 AM to 6 PM.",
         "Build marketplace & supplier integrations (REST APIs, Shopify GraphQL, fulfillment webhooks) and a database-driven CRON scheduler for SLA, ship-by and tracking alerts.",
         "Own the full slice: database design & stored procedures → business logic → admin dashboards and BI reporting (orders, earnings, advertising, designer KPIs).",
         "Automate repetitive work with a Chrome MV3 seller-dashboard extension that cut sellers' 1–2 hours of daily customization work down to one click, a Flask + Redis/RQ design rendering pipeline driving Photoshop & Illustrator, and Python bulk data-entry tools.",

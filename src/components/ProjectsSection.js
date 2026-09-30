@@ -28,6 +28,23 @@ const featuredProject = {
 const caseStudies = [
 {
   index: "02",
+  eyebrow: "Back office · Integrations",
+  title: "POD Back Office & Integrations",
+  metric: { value: "~9h/day → 0", label: "of manual designer assignment — hundreds of orders a day, more in peak season" },
+  scope: "56 admin pages · 15 cron jobs · 16 APIs · 58 test files · 42 docs — 1,400+ commits in ~11 months",
+  problem: "A POD business selling on several marketplaces runs orders, designs, product customization and fulfillment from one back office. Every new order had to be assigned to a designer by hand — a job that took someone from 9 AM to 6 PM, every day, across hundreds of daily orders and even more in peak season.",
+  built: [
+    "An auto-assignment pipeline that runs every 30 minutes: routes new orders, picks the designer and the reviewer, fetches the design link and kicks off auto-design test renders — each step with its own on/off switch and in-app notifications.",
+    "Rule-based design rules per SKU, plus KPI and % auto vs. manual dashboards for the design team.",
+    "Per-marketplace order screens, imports, supplier exports and a tracking audit; decoding of storefront personalization data so production gets the exact text & images.",
+    "Marketplace & supplier integrations — storefront APIs, Shopify GraphQL, fulfillment webhooks for status, tracking & fees.",
+    "A database-driven CRON scheduler with its own admin page — no more SSH-ing into the server to edit crontab — powering SLA, ship-by and tracking alerts.",
+  ],
+  result: "Manual designer assignment is gone: the all-day 9 AM–6 PM task now runs on its own and keeps up when peak-season volume spikes, while SLA, ship-by and tracking issues surface as alerts.",
+  stack: ["PHP", "MySQL", "jQuery", "REST API", "Webhooks", "CRON", "Shopify GraphQL", "Nginx", "Docker"],
+},
+{
+  index: "03",
   eyebrow: "Automation",
   title: "Seller-Dashboard Automation",
   metric: { value: "1–2h → 1 click", label: "sellers' daily customization work" },
@@ -43,22 +60,6 @@ const caseStudies = [
     text: "Flask + Redis/RQ workers driving Photoshop & Illustrator — text swaps, face-aware crops, background removal and AI upscaling, delivered to Google Drive. Plus Python bulk data-entry tools that turn an afternoon of product setup into a single run.",
   },
   stack: ["JavaScript", "Chrome MV3", "Internal APIs", "Python", "Flask", "Redis / RQ", "Photoshop scripting"],
-},
-{
-  index: "03",
-  eyebrow: "Back office · Integrations",
-  title: "POD Back Office & Integrations",
-  metric: { value: "100s", label: "pages & tables maintained and extended" },
-  problem: "A POD business selling on several marketplaces needs orders, customers, designs, product customization and fulfillment in one place — with the right tools for each team.",
-  built: [
-    "Per-marketplace order screens, imports, supplier exports and a tracking audit.",
-    "Rule-based designer assignment with design rules per SKU and KPI dashboards for the design team.",
-    "Decoding of storefront personalization data so production gets the exact text & images.",
-    "Marketplace & supplier integrations — storefront APIs, Shopify GraphQL, fulfillment webhooks for status, tracking & fees.",
-    "A database-driven CRON scheduler, each job in its own process, for SLA, ship-by and tracking alerts; buyer messages and email threads pulled into one internal inbox.",
-  ],
-  result: "Orders, tracking and designs stay in sync across marketplaces and suppliers, and SLA, ship-by and tracking issues surface as alerts.",
-  stack: ["PHP", "MySQL", "jQuery", "REST API", "Webhooks", "CRON", "Shopify GraphQL", "Nginx", "Docker"],
 },
 ];
 
