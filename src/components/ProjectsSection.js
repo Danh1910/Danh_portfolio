@@ -31,7 +31,6 @@ const caseStudies = [
   eyebrow: "Back office · Integrations",
   title: "POD Back Office & Integrations",
   metric: { value: "~9h/day → 0", label: "of manual designer assignment — hundreds of orders a day, more in peak season" },
-  scope: "56 admin pages · 15 cron jobs · 16 APIs · 58 test files · 42 docs — 1,400+ commits in ~11 months",
   problem: "A POD business selling on several marketplaces runs orders, designs, product customization and fulfillment from one back office. Every new order had to be assigned to a designer by hand — a job that took someone from 9 AM to 6 PM, every day, across hundreds of daily orders and even more in peak season.",
   built: [
     "An auto-assignment pipeline that runs every 30 minutes: routes new orders, picks the designer and the reviewer, fetches the design link and kicks off auto-design test renders — each step with its own on/off switch and in-app notifications.",

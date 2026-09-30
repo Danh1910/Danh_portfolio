@@ -6,7 +6,7 @@ function Label({ children }) {
 }
 
 // Case study: bối cảnh/vấn đề → đã làm gì → kết quả
-function CaseStudy({ index, eyebrow, title, metric, scope, problem, built, result, also, stack }) {
+function CaseStudy({ index, eyebrow, title, metric, problem, built, result, also, stack }) {
   return (
     <Reveal>
       <article className="grid gap-8 rounded-2xl border border-white/10 bg-surface p-6 transition-colors hover:border-accent-500/40 sm:p-8 lg:grid-cols-[1fr_1.6fr]">
@@ -20,8 +20,6 @@ function CaseStudy({ index, eyebrow, title, metric, scope, problem, built, resul
             <p className="text-2xl font-bold text-accent-200">{metric.value}</p>
             <p className="mt-1 text-sm text-gray-300">{metric.label}</p>
           </div>
-
-          {scope ? <p className="mt-4 font-mono text-xs leading-relaxed text-gray-500">{scope}</p> : null}
 
           <div className="mt-6 flex flex-wrap gap-2">
             {stack.map((tech) => (
