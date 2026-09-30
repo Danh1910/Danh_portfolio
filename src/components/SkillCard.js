@@ -1,19 +1,16 @@
 import React from "react";
+import { TiltCard } from "./ui/motion";
 
 function SkillCard({ icon, name, description }) {
   return (
-    <div className="flex items-start gap-4 bg-[#1e1e1e] p-4 rounded-lg shadow-md hover:shadow-cyan-500/40 transition-shadow">
+    <TiltCard className="group h-full rounded-xl border border-white/10 bg-surface p-6 transition-colors hover:border-accent-500/50">
       {/* Hình ảnh/biểu tượng skill */}
-      <div className="flex-shrink-0 w-1/6 md:w-2/12">
-        <img src={icon} alt={name} className="w-full h-auto" />
-      </div>
+      <img src={icon} alt="" className="h-12 w-12 rounded-lg transition-transform duration-300 group-hover:scale-110" />
 
       {/* Nội dung skill */}
-      <div className="w-5/6 md:w-10/12">
-        <h3 className="text-xl font-semibold text-cyan-400 mb-2">{name}</h3>
-        <p className="text-gray-300">{description}</p>
-      </div>
-    </div>
+      <h3 className="mt-5 text-lg font-semibold text-white transition-colors group-hover:text-accent-300">{name}</h3>
+      <p className="mt-2 text-sm leading-relaxed text-gray-400">{description}</p>
+    </TiltCard>
   );
 }
 

@@ -1,4 +1,6 @@
 import React from "react";
+import Section from "./ui/Section";
+import { Stagger, StaggerItem } from "./ui/motion";
 
 // Danh sách thông tin cá nhân
 const infoCards = [
@@ -12,47 +14,54 @@ const infoCards = [
   { 
     icon: "/icons/github.png", 
     label: "GitHub", 
-    value: "https://github.com/Danh1910",
+    value: "github.com/Danh1910",
     link: "https://github.com/Danh1910" // link github
   },
+  {
+    icon: "/icons/linkedin.svg",
+    label: "LinkedIn",
+    value: "linkedin.com/in/danh-trần",
+    link: "https://www.linkedin.com/in/danh-tr%E1%BA%A7n-a12784333/"
+  },
   { icon: "/icons/phone.png", label: "Phone", value: "+84 947 947 704" },
-  { icon: "/icons/birthday.png", label: "Birthday", value: "19/10/2003" },
   { icon: "/icons/location.png", label: "Address", value: "Ho Chi Minh, Vietnam" },
 ];
 
+function InfoCard({ icon, label, value, link }) {
+  const content = (
+    <>
+      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-white/5 transition-colors group-hover:bg-accent-500/20">
+        <img src={icon} alt="" className="h-5 w-5" />
+      </span>
+      <span className="min-w-0">
+        <span className="block text-xs uppercase tracking-wider text-gray-500">{label}</span>
+        <span className="block truncate text-gray-200 transition-colors group-hover:text-accent-300">{value}</span>
+      </span>
+    </>
+  );
+  const className =
+    "group flex h-full items-center gap-4 rounded-xl border border-white/10 bg-surface p-4 transition-colors hover:border-accent-500/50";
+
+  return link ? (
+    <a href={link} target="_blank" rel="noopener noreferrer" className={className}>
+      {content}
+    </a>
+  ) : (
+    <div className={className}>{content}</div>
+  );
+}
+
 function MyInformationSection() {
   return (
-    <section id="information" className="py-16 bg-[#121212] text-white">
-      <div className="container mx-auto">
-        <h2 className="text-3xl font-bold mb-8 text-cyan-400">Information</h2>
-
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {infoCards.map((card, idx) => (
-            <div
-              key={idx}
-              className="p-3 border border-cyan-500/30 rounded-lg hover:bg-cyan-500/10 transition-all flex items-center gap-3"
-            >
-              <img src={card.icon} alt={card.label} className="w-6 h-6" />
-              <div>
-                <p className="text-cyan-400 font-semibold">{card.label}</p>
-                {card.link ? (
-                  <a
-                    href={card.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-gray-300 text-sm hover:text-cyan-400"
-                  >
-                    {card.value}
-                  </a>
-                ) : (
-                  <p className="text-gray-300 text-sm">{card.value}</p>
-                )}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </section>
+    <Section id="information" index="01" title="Information">
+      <Stagger className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+        {infoCards.map((card) => (
+          <StaggerItem key={card.label}>
+            <InfoCard {...card} />
+          </StaggerItem>
+        ))}
+      </Stagger>
+    </Section>
   );
 }
 

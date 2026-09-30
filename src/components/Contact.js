@@ -1,124 +1,104 @@
 import React, { useState } from "react";
-import Swal from "sweetalert2";
+import Section from "./ui/Section";
+import { Reveal, Stagger, StaggerItem } from "./ui/motion";
 
+const EMAIL = "danh123098@gmail.com";
+
+const CHANNELS = [
+  {
+    icon: "/icons/email.png",
+    label: "Email",
+    value: EMAIL,
+    link: `mailto:${EMAIL}`,
+  },
+  {
+    icon: "/icons/linkedin.svg",
+    label: "LinkedIn",
+    value: "Say hi on LinkedIn",
+    link: "https://www.linkedin.com/in/danh-tr%E1%BA%A7n-a12784333/",
+  },
+  {
+    icon: "/icons/github.png",
+    label: "GitHub",
+    value: "github.com/Danh1910",
+    link: "https://github.com/Danh1910",
+  },
+];
 
 function ContactForm() {
-  const [form, setForm] = useState({
-    name: "",
-    email: "",
-    feedback: "",
-  });
+  const [copied, setCopied] = useState(false);
 
-  const handleChange = (e) => {
-    setForm({ ...form, [e.target.name]: e.target.value });
-  };
-
-  const handleSubmit = async (e) => {
-  e.preventDefault();
-
-  try {
-  const res = await fetch("http://localhost:5000/api/feedback", {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify(form),
-  });
-
-  const data = await res.json();
-
-  Swal.fire({
-    title: "Success!",
-    text: data.message || "Feedback sent successfully!",
-    icon: "success",
-    confirmButtonColor: "#06b6d4", // màu cyan
-    background: "#1e1e1e", // dark mode
-    color: "#fff",
-  });
-
-  setForm({ name: "", email: "", feedback: "" });
-} catch (err) {
-  console.error(err);
-
-  Swal.fire({
-    title: "Error!",
-    text: "Failed to send feedback.",
-    icon: "error",
-    confirmButtonColor: "#ef4444", // màu đỏ
-    background: "#1e1e1e",
-    color: "#fff",
-  });
-}
-};
-
+  async function copyEmail() {
+    try {
+      await navigator.clipboard.writeText(EMAIL);
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      window.location.href = `mailto:${EMAIL}`;
+    }
+  }
 
   return (
-    <section id="contact" className="py-16 bg-[#121212] text-white">
-      <div className="container mx-auto max-w-2xl">
-        <h2 className="text-3xl font-bold mb-8 text-cyan-400">Contact Me</h2>
+    <Section id="contact" index="05" title="Contact Me">
+      <Reveal>
+        <div className="relative overflow-hidden rounded-2xl border border-accent-500/30 bg-gradient-to-br from-accent-500/15 via-surface to-surface p-8 sm:p-12">
+          <div
+            className="pointer-events-none absolute -bottom-24 -right-24 h-72 w-72 rounded-full bg-accent-500/20 blur-3xl"
+            aria-hidden="true"
+          />
 
-        <form
-          onSubmit={handleSubmit}
-          className="space-y-6 bg-[#1e1e1e] p-6 rounded-lg shadow-lg"
-        >
-          {/* Name */}
-          <div>
-            <label className="block text-sm font-medium text-gray-300 mb-2">
-              Name
-            </label>
-            <input
-              type="text"
-              name="name"
-              value={form.name}
-              onChange={handleChange}
-              placeholder="Enter your name"
-              required
-              className="w-full p-3 rounded bg-[#121212] border border-cyan-500/30 text-white 
-             focus:outline-none focus:border-cyan-400 autofill:bg-[#121212] autofill:text-white"
-            />
+          <div className="relative max-w-2xl">
+            <h3 className="text-2xl font-bold text-white sm:text-3xl">Have a project in mind? Let's talk.</h3>
+            <p className="mt-4 leading-relaxed text-gray-300">
+              Back offices, integrations, scheduled jobs, browser extensions or a customer portal taken all the way to
+              production — drop me a line and I'll get back to you.
+            </p>
+
+            <div className="mt-8 flex flex-wrap gap-3">
+              <a
+                href={`mailto:${EMAIL}`}
+                className="rounded-lg bg-accent-500 px-6 py-3 font-semibold text-white shadow-lg shadow-accent-500/25 transition-colors hover:bg-accent-400"
+              >
+                Send me an email
+              </a>
+              <button
+                type="button"
+                onClick={copyEmail}
+                className="rounded-lg border border-white/15 px-6 py-3 font-semibold text-white transition-colors hover:border-accent-400 hover:text-accent-300"
+              >
+                {copied ? "Copied ✓" : "Copy email"}
+              </button>
+            </div>
           </div>
+        </div>
+      </Reveal>
 
-          {/* Email */}
-          <div>
-            <label className="block text-sm font-medium text-gray-300 mb-2">
-              Email
-            </label>
-            <input
-              type="email"
-              name="email"
-              value={form.email}
-              onChange={handleChange}
-              placeholder="Enter your email"
-              required
-              className="w-full p-3 rounded bg-[#121212] border border-cyan-500/30 text-white 
-             focus:outline-none focus:border-cyan-400 autofill:bg-[#121212] autofill:text-white"
-            />
-          </div>
-
-          {/* Feedback */}
-          <div>
-            <label className="block text-sm font-medium text-gray-300 mb-2">
-              Feedback
-            </label>
-            <textarea
-              name="feedback"
-              value={form.feedback}
-              onChange={handleChange}
-              placeholder="Write your feedback..."
-              rows="4"
-              required
-              className="w-full p-3 rounded bg-[#121212] border border-cyan-500/30 text-white focus:outline-none focus:border-cyan-400"
-            />
-          </div>
-
-          {/* Submit Button */}
-          <button
-            type="submit"
-            className="px-6 py-3 bg-cyan-500 text-black font-bold rounded-lg hover:bg-cyan-400 transition"
-          >
-            Send
-          </button>
-        </form>
-      </div>
-    </section>
+      <Stagger className="mt-6 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        {CHANNELS.map((channel) => (
+          <StaggerItem key={channel.label}>
+            <a
+              href={channel.link}
+              target={channel.link.startsWith("mailto:") ? undefined : "_blank"}
+              rel="noopener noreferrer"
+              className="group flex h-full items-center gap-4 rounded-xl border border-white/10 bg-surface p-4 transition-colors hover:border-accent-500/50"
+            >
+              <span className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-white/5 transition-colors group-hover:bg-accent-500/20">
+                <img src={channel.icon} alt="" className="h-5 w-5" />
+              </span>
+              <span className="min-w-0">
+                <span className="block text-xs uppercase tracking-wider text-gray-500">{channel.label}</span>
+                <span className="block truncate text-gray-200 transition-colors group-hover:text-accent-300">
+                  {channel.value}
+                </span>
+              </span>
+              <span className="ml-auto text-gray-600 transition-transform group-hover:translate-x-1 group-hover:text-accent-300" aria-hidden="true">
+                →
+              </span>
+            </a>
+          </StaggerItem>
+        ))}
+      </Stagger>
+    </Section>
   );
 }
 
