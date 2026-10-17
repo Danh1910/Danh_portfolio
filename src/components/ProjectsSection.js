@@ -5,12 +5,12 @@ import Section from "./ui/Section";
 import { Reveal } from "./ui/motion";
 
 const featuredProject = {
-  title: "B2B Website & Billing Platform",
-  description: "A company website plus monthly client billing for a US-based e-commerce operations company — built solo, from an empty repo to live customers in about a week. Public website (VI / EN), customer portal with invoice history, and an admin panel for subscriptions — 3 surfaces, 1 codebase.",
-  technologies: ["PHP 8.5", "Laravel 13", "Filament", "Tailwind v4", "Alpine.js", "MySQL 8.4", "Docker", "Laravel Cloud", "Resend"],
+  title: "Seller Billing Platform & Website",
+  description: "An internal platform for managing and billing the company's sellers, plus the public company website — designed and delivered in about a week with AI-assisted development (Claude Code). I owned the system design, database schema, invoice lifecycle rules and Laravel Cloud setup, and reviewed every change before it shipped. Public website (VI / EN), seller portal with invoice history, and an admin panel for subscriptions — 3 surfaces, 1 codebase.",
+  technologies: ["PHP 8.5", "Laravel 13", "Filament", "Tailwind v4", "Alpine.js", "MySQL 8.4", "Docker", "Laravel Cloud", "Resend", "Claude Code"],
   badge: "Live in production",
   highlights: [
-    { label: "role", value: "Solo dev" },
+    { label: "role", value: "Design & delivery" },
     { label: "repo → production", value: "~1 week" },
     { label: "tests", value: "190 passing" },
     { label: "static analysis", value: "PHPStan L5" },
@@ -18,7 +18,7 @@ const featuredProject = {
   points: [
     "Issued invoices are locked; every status change recorded",
     "PDF invoices emailed via Resend from an idempotent queue",
-    "Per-customer data isolation, click-wrap ToS with time & IP",
+    "Per-seller data isolation, click-wrap ToS with time & IP",
     "Login throttling, activity & email logs",
     "Isolated demo & prod databases, branch-based auto-deploys",
     "Custom domain with SPF / DKIM, runbooks & code-reading guide",

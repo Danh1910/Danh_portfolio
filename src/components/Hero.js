@@ -5,7 +5,7 @@ import { CV_URL, EMAIL, GITHUB, LINKEDIN } from "./links";
 const IMPACT = [
   { value: "~9h/day → 0", label: "manual order-to-designer assignment, fully automated" },
   { value: "1–2h → 1 click", label: "sellers' daily customization work, automated" },
-  { value: "~1 week", label: "empty repo → production, built solo" },
+  { value: "~1 week", label: "empty repo → production, AI-assisted delivery" },
   { value: "190 tests", label: "plus PHPStan level 5 on a billing platform" },
 ];
 

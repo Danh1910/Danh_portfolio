@@ -13,7 +13,7 @@ const experiences = [
         "Build marketplace & supplier integrations (REST APIs, Shopify GraphQL, fulfillment webhooks) and a database-driven CRON scheduler for SLA, ship-by and tracking alerts.",
         "Own the full slice: database design & stored procedures → business logic → admin dashboards and BI reporting (orders, earnings, advertising, designer KPIs).",
         "Automate repetitive work with a Chrome MV3 seller-dashboard extension that cut sellers' 1–2 hours of daily customization work down to one click, a Flask + Redis/RQ design rendering pipeline driving Photoshop & Illustrator, and Python bulk data-entry tools.",
-        "Built a B2B website & monthly billing platform solo (Laravel, Filament) — from empty repo to live customers in about a week, with 190 tests and PHPStan level 5."
+        "Designed and delivered an internal seller billing platform (Laravel, Filament) with AI-assisted development (Claude Code) — owned system design, database schema, invoice lifecycle rules and Laravel Cloud deployment; empty repo to production in about a week, 190 tests and PHPStan level 5."
     ]
     },
     {
