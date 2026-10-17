@@ -6,7 +6,7 @@ const experiences = [
     {
     company: "POD E-commerce Company",
     position: "Full-stack Developer — Backend & Automation",
-    time: "Aug 2025 - Present",
+    time: "Oct 2025 - Present",
     description: [
         "Maintain and extend a large PHP/MySQL back office covering orders, customers, designs, product customization and fulfillment across several marketplaces.",
         "Built an auto-assignment pipeline that routes every new order to the right designer and reviewer every 30 minutes — replacing a manual task that took someone all day, 9 AM to 6 PM.",
@@ -18,19 +18,12 @@ const experiences = [
     },
     {
     company: "HDBank AMC",
-    position: "Full-stack Developer (Internship)",
+    position: "Full-stack Developer & Data Analyst (Internship)",
     time: "April 2025 - Aug 2025",
     description: [
         "Developed a fund certificate management system on the Odoo platform by customizing modules and integrating REST APIs using Python.",
         "Supported deployment, configuration, and enhancement of ERP features to meet data management and business process requirements.",
-        "Contributed to an internal project on asset data processing, ensuring stable Odoo operation and effective integration with other applications."
-    ]
-    },
-    {
-    company: "HDBank AMC",
-    position: "Data Analyst (Internship)",
-    time: "Feb 2025 - April 2025",
-    description: [
+        "Contributed to an internal project on asset data processing, ensuring stable Odoo operation and effective integration with other applications.",
         "Assisted in collecting, cleaning, and processing real estate data using Python and Excel to support analysis and decision-making.",
         "Built scripts to compare raw data with percentage-based reference tables, optimizing data entry and reporting processes.",
         "Created data visualizations and supported business teams in analyzing trends and providing recommendations to improve efficiency."
